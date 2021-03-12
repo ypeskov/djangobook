@@ -4,6 +4,8 @@ services:
   web:
     build: .
     command: python /code/manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=1bp2fs^s23jxt#yhvg$$1-)h$$02^hvl#u5zvg_zx7+vd9ug2t*#
     volumes:
       - .:/code
     ports:
@@ -16,5 +18,7 @@ services:
       - /Users/ypeskov/Projects/Python/book_django/books/postgres_data/:/var/lib/postgresql/data/
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
+    ports:
+    - 5432:5432
 volumes:
   postgres_data:
