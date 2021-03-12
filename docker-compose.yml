@@ -16,7 +16,7 @@ services:
   db:
     image: postgres:12
     volumes:
-      - /Users/ypeskov/Projects/Python/book_django/books/postgres_data/:/var/lib/postgresql/data/
+      - ./postgres_data/:/var/lib/postgresql/data/
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
     ports:
